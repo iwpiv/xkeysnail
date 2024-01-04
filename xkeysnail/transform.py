@@ -94,6 +94,13 @@ def set_mark(mark_set):
     return _set_mark
 
 
+def toggle_mark(mark_set):
+    def _set_mark():
+        global _mark_set
+        _mark_set = False if _mark_set else True
+    return _set_mark
+
+
 def with_or_set_mark(combo):
     if isinstance(combo, Key):
         combo = Combo(None, combo)
